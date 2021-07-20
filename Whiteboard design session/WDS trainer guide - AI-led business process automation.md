@@ -361,7 +361,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | How to: Use Text Analytics for health     | <https://docs.microsoft.com/azure/cognitive-services/Text-Analytics/how-tos/text-analytics-for-health> |
 | Semantic search in Azure Cognitive Search | <https://docs.microsoft.com/azure/search/semantic-search-overview>                                     |
 | What is Power BI?                         | <https://docs.microsoft.com/power-bi/fundamentals/power-bi-overview>                                   |
-| Introduction to Azure Azure Functions     | <https://docs.microsoft.com/azure/azure-functions/functions-overview>                                  |
+| Introduction to Azure Functions           | <https://docs.microsoft.com/azure/azure-functions/functions-overview>                                  |
 
 # AI-led business process automation whiteboard design session trainer guide
 
@@ -407,9 +407,9 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Preferred target audience
 
-Senaabil Chandi, the CTO of Contoso Healthcare
+Senaabil Chandi, CTO of Contoso Healthcare
 
-The primary audience is the business decision makers and technology decision makers. Usually we talk to the infrastructure managers who report to the chief information officers (CIOs), or to application sponsors (like a vice president [VP] line of business [LOB], or to those who represent the business unit IT or developers that report to application sponsors.
+The primary audience is the business decision makers and technology decision makers. Usually, we talk to the infrastructure managers who report to the chief information officers (CIOs), or to application sponsors (like a vice president [VP] line of business [LOB], or to those who represent the business unit IT or developers that report to application sponsors.
 
 ## Preferred solution
 
@@ -425,11 +425,11 @@ The primary audience is the business decision makers and technology decision mak
 
 3. Audio and claim form files need to be stored centrally. What type of structure do you recommend to organize these incoming files?
 
-   There are multiple valid approaches to file organization. When using using batch processing, a common approach is to use the following structure (subject matter could be "claimsform" or "visitaudio"):
+   There are multiple valid approaches to file organization. When using batch processing, a common approach is to use the following structure (subject matter could be "claimsform" or "visitaudio"):
 
-    1. {Hospital}/{SubjectMatter}/In/{yyyy}/{mm}/{dd}/{hh}/
-    2. {Hospital}/{SubjectMatter}/Out/{yyyy}/{mm}/{dd}/{hh}/
-    3. {Hospital}/{SubjectMatter}/Bad/{yyyy}/{mm}/{dd}/{hh}/
+    - {Hospital}/{SubjectMatter}/In/{yyyy}/{mm}/{dd}/{hh}/
+    - {Hospital}/{SubjectMatter}/Out/{yyyy}/{mm}/{dd}/{hh}/
+    - {Hospital}/{SubjectMatter}/Bad/{yyyy}/{mm}/{dd}/{hh}/
 
     Using this structure, files land in the "in" directory, and when processed, the new data is placed in the "out" directory. Should the processing of a file fail, it can be moved into a "bad" folder for further review.
 
@@ -527,4 +527,4 @@ Hospitals in the Contoso Healthcare network provide images of claim forms and vi
 
 "Throughout this project, we have not only reduced the effort involved in processing our claims forms, but we have also increased accuracy and turnaround time to gain insights on this data. We have developed essential visualizations on our claims data that allow us to view current and historical trends, which assists us in identifying ways to improve our business model. We have also freed up many of our linguistic staff to work directly with our patients versus having them reviewing and translating visit audio files. One of the most exciting outcomes of this project is that we've also attained ground-breaking insights from our patient audio transcripts by adding Text Analytics for health AI into our search capabilities on our web portal."
 
-- Senaabil Chandi, CTO, Contoso Healthcare
+Senaabil Chandi, CTO, Contoso Healthcare
