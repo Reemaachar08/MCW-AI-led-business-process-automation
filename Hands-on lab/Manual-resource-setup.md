@@ -407,7 +407,7 @@ In this task, you provision a Cosmos DB resource to store claims and audio trans
      - **Location (4)**: Select the location you are using for resources in this hands-on lab.
      - **Capacity Mode (5)**: Choose **Serverless**.
 
-   ![On the Create Azure Cosmos DB Account blade, the values specified above are entered into the appropriate fields.](media/cosmos-db-create-resource.png "Create new Azure Cosmos DB Account")
+   ![On the Create Azure Cosmos DB Account blade, the values specified above are entered into the appropriate fields.](media/cosmos-db-create-account.png "Create new Azure Cosmos DB Account")
 
 5. Select **Review + create (6)**.
 
