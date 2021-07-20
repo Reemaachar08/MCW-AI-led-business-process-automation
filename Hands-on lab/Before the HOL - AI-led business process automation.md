@@ -104,7 +104,7 @@ In this task, you create an Azure resource group to serve as a container for the
 
 ### Task 3: Download lab artifacts
 
-1. In the Azure Portal, open the Azure Cloud Shell by selecting its icon from the right side of the top toolbar. Be sure to select **Powershell** as the shell type.
+1. In the Azure Portal, open the Azure Cloud Shell by selecting its icon from the right side of the top toolbar. Be sure to select **PowerShell** as the shell type.
 
     ![A portion of the Azure Portal taskbar is displayed with the Cloud Shell icon highlighted.](media/bhol_azurecloudshellmenu.png "Opening the Cloud Shell")
 
@@ -154,7 +154,7 @@ When executing the script below, it is crucial to let the scripts run to complet
 
     | Prompt |
     |--------|
-    | Enter the desired Azure Subscription for this lab (you will be able to copy and paste from a listing) |
+    | Enter the desired Azure Subscription for this lab (you will be able to copy and paste from a listing). |
     | Enter the name of your resource group. |
 
 3. At the end of the script, you should see a message indicating **Environment setup complete**.
