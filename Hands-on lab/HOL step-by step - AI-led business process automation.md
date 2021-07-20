@@ -96,11 +96,11 @@ Finally, the internal hospital portal queries the indexes created in Azure Cogni
 
 ## Before the hands-on lab
 
-Refer to the Before the hands-on lab setup guide manual before continuing to the lab exercises.
+Refer to the Before the hands-on lab setup guide before continuing to the lab exercises.
 
 ## Exercise 1: Extract text and structure from documents with Forms Recognizer
 
-Duration: 1 hour
+Duration: 60 minutes
 
 Azure Form Recognizer is a part of [Azure Applied AI Services](https://docs.microsoft.com/azure/applied-ai-services/) that lets you build automated data processing software using machine learning technology. You can identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence, and more. You can quickly get accurate results tailored to your specific content without heavy manual intervention or extensive data science expertise. Form Recognizer comprises custom document processing models, prebuilt models for invoices, receipts, IDs and business cards, and the layout model.
 
@@ -148,7 +148,7 @@ Contoso has its own document template for claims processing. In this exercise, y
 
 11. Select **Go Back (1)** from your browser twice to go back to the **Project Settings** page.
 
-12. Set the values listed below.
+12. Set the values listed below:
 
     - **Source Connection (2):** **DocumentSource**
     - **Form recognizer service URI (3):** Previously copied **Endpoint** value from Forms Recognizer.
@@ -182,7 +182,7 @@ As part of its automation process, Contoso will upload claims documents in the f
 
    ![Storage account page is open. The events panel is shown. Azure Functions is selected. Create button is highlighted.](media/storage-event-function.png "Create Storage Event Subscription")
 
-3. From the list of function apps, expand the function app named **contoso-func-SUFFIX** **(1)** to get a list of functions available. From the list, select the **ClaimsProcessing** function.
+3. From the list of function apps, expand the function app named **contoso-func-SUFFIX** **(1)** to get a list of functions available. From the list, select the **ClaimsProcessing** **(2)** function.
 
    ![Function Apps are listed. Contoso function app functions are shown. ClaimsProcessing function is highlighted.](media/event-grid-select-claimsprocessing.png "Function Selection for Event Grid")
 
@@ -190,7 +190,7 @@ As part of its automation process, Contoso will upload claims documents in the f
 
    ![ClaimsProcessing function is selected. Add Event Grid Subscription link is highlighted.](media/event-grid-add-subscription.png "Add Event Grid Subscription")
 
-5. Set the values listed below.
+5. Set the values listed below:
 
     - **Name (1):** **DocumentEvents**
     - **Topic Type (2):** Storage account.
@@ -239,7 +239,7 @@ To process documents, the Azure Function code has to find the latest model train
 
 7. Once logged into the LabVM VM, a script will execute to install the various items needed for the remaining lab steps.
 
-8. Once the script completes, open **File Explorer** and navigate to the `C:\MCW\MCW-main\Hands-on lab\lab-files\source-azure-functions\Lab-DocumentProcessing` folder. Open **DocumentProcessing** solution file. When asked, select **Visual Studio 2019** as the Visual Studio version to use.
+8. Once the script completes, open **File Explorer** **(1)** and navigate to the `C:\MCW\MCW-main\Hands-on lab\lab-files\source-azure-functions\Lab-DocumentProcessing` folder. Open **DocumentProcessing** **(2)** solution file. When asked, select **Visual Studio 2019** as the Visual Studio version to use.
 
     ![File Explorer shows the DocumentProcessing folder in C:\MCW\MCW-main\Hands-on lab\lab-files\source-azure-functions\Lab-DocumentProcessing. DocumentProcessing solution file is highlighted.](media/visualstudio-open-documentprocessing.png "DocumentProcessing Solution")
 
@@ -397,7 +397,7 @@ Now that all implementations are completed, we can upload a new document to the 
 
 ## Exercise 2: Extract Health Analytics from visit audio records
 
-Duration: 1 hour
+Duration: 60 minutes
 
 Contoso Healthcare hospitals upload audio recordings of patient visits to an Azure Storage Blob service. An Azure Function will be triggered with an Event Grid subscription/event handler to process recordings. The function will first detect the language of the recording using [Azure Cognitive Speech Audio Language Identification](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-automatic-language-detection?pivots=programming-language-csharp) and then transcribe it to text. Once transcriptions are ready, Spanish records will be translated to English based on Contoso's requirements. Finally, [Azure Cognitive Services Text Analytics for Health](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-for-health?tabs=ner) will extract and label relevant medical information to provide a richer search experience. During the exercise, you will integrate all the pieces, run a couple of sample recordings, and observe the results.
 
@@ -609,7 +609,7 @@ Now that all implementations are completed, we can upload new patient recordings
 
     ![Cosmos DB Overview page is open. Data explorer button is highlighted.](media/cosmosdb-data-explorer.png "Cosmos DB Data Explorer")
 
-7. Select the **Items (1)** list under the **Contoso** database's **Transcriptions** collection. Select the first document **(2)** to see it's content. Take a look at the **TranscribedText (3)** and **HealthcareEntities (4)** extracted.
+7. Select the **Items (1)** list under the **Contoso** database's **Transcriptions** collection. Select the first document **(2)** to see its content. Take a look at the **TranscribedText (3)** and **HealthcareEntities (4)** extracted.
 
     > **Note:** It can take up to a minute for the initial results to show up. Refresh the collection every fifteen seconds to see the latest.
 
@@ -798,7 +798,7 @@ In this task, we will connect our Azure Cognitive Search indexes with the hospit
 
     The second item in the search result **(3)** is an audio transcription. All the green highlighted sections are medical information that Text Analytics for Health identified. These keywords and their primary categories are used for further investigation either by keyword search **(1)** or faceted filtering **(4)**. You can always click the play button in the result view to listen to the actual patient-doctor dialog. 
 
-    In the case of Contoso, the hospital wanted to prioritize claims forms in the search result. Therefore the implementation includes two search queries to the claims index and audio index and combines the top-scoring items based on the business rule within the portal. 
+    In the case of Contoso, the hospital wanted to prioritize claims forms in the search result. Therefore, the implementation includes two search queries to the claims index and audio index and combines the top-scoring items based on the business rule within the portal. 
 
 ## Exercise 4: Building custom PowerBI reports on healthcare data
 
@@ -892,11 +892,11 @@ In this exercise, you will create Power BI reports surfacing the data extracted 
 
    ![Stacked Bar Chart visualization is selected. Claims.Diagnosis is set for Axis and Claims.TotalCharges is set for Values.](media/powerbi-bar-chart.png "Stacked Bar Chart")
 
-3. Select the treemap visualization you created (1). Select the paint roller icon and expand the **Title** dropdown (2). Change the title text to **Diagnosis Popularity** (3).
+3. Select the treemap visualization you created **(1)**. Select the paint roller icon and expand the **Title** dropdown **(2)**. Change the title text to **Diagnosis Popularity** **(3)**.
 
    ![Renaming the treemap visualization in Power BI.](media/rename-treemap-viz.png "Visualization rename")
 
-4. Select the bar chart visualization (1). Again, expand the paint roller icon and select the **Title** dropdown (2). Change the title to **Total Charges per Diagnosis** (3).
+4. Select the bar chart visualization **(1)**. Again, expand the paint roller icon and select the **Title** dropdown **(2)**. Change the title to **Total Charges per Diagnosis** **(3)**.
 
    ![Renaming the bar chart visualization in Power BI.](media/rename-barchart-viz.png "Bar chart title rename")
 
