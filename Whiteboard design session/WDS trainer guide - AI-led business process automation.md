@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-June 2021
+July 2021
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -350,18 +350,18 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 | Description                               | Links                                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Azure Storage Account                     | <https://docs.microsoft.com/azure/storage/common/storage-account-overview>                             |
-| Azure Files                               | <https://docs.microsoft.com/azure/storage/files/storage-files-introduction>                            |
-| Azure Event Grid                          | <https://docs.microsoft.com/azure/event-grid/overview>                                                 |
-| ADLS Gen 2 Best Practices                 | <https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-best-practices>                      |
-| Azure Data Store Models                   | <https://docs.microsoft.com/azure/architecture/guide/technology-choices/data-store-overview>           |
-| Azure Form Recognizer                     | <https://docs.microsoft.com/azure/cognitive-services/form-recognizer/overview?tabs=v2-1>               |
-| Speech Service                            | <https://docs.microsoft.com/azure/cognitive-services/speech-service/overview>                          |
-| Azure Cognitive Search                    | <https://docs.microsoft.com/azure/search/search-what-is-azure-search>                                  |
-| Text Analytics for Health                 | <https://docs.microsoft.com/azure/cognitive-services/Text-Analytics/how-tos/text-analytics-for-health> |
+| Azure Storage account overview            | <https://docs.microsoft.com/azure/storage/common/storage-account-overview>                             |
+| What is Azure Files?                      | <https://docs.microsoft.com/azure/storage/files/storage-files-introduction>                            |
+| What is Azure Event Grid?                 | <https://docs.microsoft.com/azure/event-grid/overview>                                                 |
+| Best practices for using ADLS Gen 2       | <https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-best-practices>                      |
+| Understand Azure data store models        | <https://docs.microsoft.com/azure/architecture/guide/technology-choices/data-store-overview>           |
+| What is Azure Form Recognizer?            | <https://docs.microsoft.com/azure/cognitive-services/form-recognizer/overview?tabs=v2-1>               |
+| What is the Speech service?               | <https://docs.microsoft.com/azure/cognitive-services/speech-service/overview>                          |
+| What is Azure Cognitive Search?           | <https://docs.microsoft.com/azure/search/search-what-is-azure-search>                                  |
+| How to: Use Text Analytics for health     | <https://docs.microsoft.com/azure/cognitive-services/Text-Analytics/how-tos/text-analytics-for-health> |
 | Semantic search in Azure Cognitive Search | <https://docs.microsoft.com/azure/search/semantic-search-overview>                                     |
-| Power BI                                  | <https://docs.microsoft.com/power-bi/fundamentals/power-bi-overview>                                   |
-| Azure Functions                           | <https://docs.microsoft.com/azure/azure-functions/functions-overview>                                  |
+| What is Power BI?                         | <https://docs.microsoft.com/power-bi/fundamentals/power-bi-overview>                                   |
+| Introduction to Azure Azure Functions     | <https://docs.microsoft.com/azure/azure-functions/functions-overview>                                  |
 
 # AI-led business process automation whiteboard design session trainer guide
 
