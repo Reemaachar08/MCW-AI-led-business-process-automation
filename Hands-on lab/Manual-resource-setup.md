@@ -4,7 +4,7 @@ This guide provides step-by-step instructions to manually provision and configur
 
 > **IMPORTANT**: Many Azure resources require globally unique names. Throughout these steps, the word "SUFFIX" appears as part of resource names. You should replace this with your Microsoft alias, initials, or another value to ensure resources are uniquely named.
 
-June 2021
+July 2021
 
 **Contents**:
 
