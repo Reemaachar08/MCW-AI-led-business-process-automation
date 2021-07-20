@@ -231,4 +231,4 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | How to: Use Text Analytics for health     | <https://docs.microsoft.com/azure/cognitive-services/Text-Analytics/how-tos/text-analytics-for-health> |
 | Semantic search in Azure Cognitive Search | <https://docs.microsoft.com/azure/search/semantic-search-overview>                                     |
 | What is Power BI?                         | <https://docs.microsoft.com/power-bi/fundamentals/power-bi-overview>                                   |
-| Introduction to Azure Azure Functions     | <https://docs.microsoft.com/azure/azure-functions/functions-overview>                                  |
+| Introduction to Azure Functions           | <https://docs.microsoft.com/azure/azure-functions/functions-overview>                                  |
