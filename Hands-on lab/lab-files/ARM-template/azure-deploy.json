@@ -300,14 +300,6 @@
             }
         },
         {
-            "type": "Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces",
-            "apiVersion": "2021-04-15",
-            "name": "[concat(variables('cosmosDBName'), '/default')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.DocumentDB/databaseAccounts', variables('cosmosDBName'))]"
-            ]
-        },
-        {
             "type": "Microsoft.DocumentDB/databaseAccounts/sqlRoleDefinitions",
             "apiVersion": "2021-04-15",
             "name": "[concat(variables('cosmosDBName'), '/00000000-0000-0000-0000-000000000001')]",
