@@ -149,7 +149,7 @@ namespace DocumentProcessing
                 newTranscription.TranscribedText = transcribedText;
                 foreach (var item in healthcareResult.Entities)
                 {
-                    newTranscription.HealthcareEntities.Add(new Model.HealthcareEntity() { Category = item.Category, Text = item.Text });
+                    newTranscription.HealthcareEntities.Add(new Model.HealthcareEntity() { Category = item.Category.ToString(), Text = item.Text });
                 }
 
                 try
