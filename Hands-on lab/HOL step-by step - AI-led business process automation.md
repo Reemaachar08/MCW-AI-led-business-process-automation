@@ -245,11 +245,11 @@ To process documents, the Azure Function code has to find the latest model train
 
     ![File Explorer shows the DocumentProcessing folder in C:\MCW\MCW-main\Hands-on lab\lab-files\source-azure-functions\Lab-DocumentProcessing. DocumentProcessing solution file is highlighted.](media/visualstudio-open-documentprocessing.png "DocumentProcessing Solution")
 
-9. In the Visual Studio sign in page select **Not now, maybe later.** to continue.
+9. In the Visual Studio sign-in page, select **Not now, maybe later.** to continue.
 
    ![Visual Studio Sign In dialog is presented. "Not now, maybe later" link is highlighted.](media/visualstudio-sign-in.png "Visual Studio Sign In")
 
-10. On the Visual Studio Licensing page select **Sign-In** and use Microsoft Account credentials. This will register a Visual Studio 2019 Community Edition license for your account for free.
+10. On the Visual Studio Licensing page select **Sign-In** and use Microsoft Account credentials. This step will register a Visual Studio 2019 Community Edition license for your account for free.
 
     ![Visual Studio License page is open. Sign-In button is highlighted.](media/visual-studio-license.png "Visual Studio License")
 
@@ -277,7 +277,7 @@ To process documents, the Azure Function code has to find the latest model train
     RecognizedFormCollection forms = operationResponse.Value;
     ```
 
-15. Close Visual Studio. You don't have to worry about the changes you have implemented. A fully functional version of the Function App is already deployed to your Lab environment and will be soon ready to be tested.
+15. Close Visual Studio. The recent changes are not required. A fully functional version of the Function App is already deployed to your Lab environment and will be soon ready to be tested.
 
 ### Task 4: Connecting CosmosDB and Forms Recognizer to Azure Functions
 
@@ -359,7 +359,7 @@ Now that all implementations are completed, we can upload a new document to the 
 
     ![The credentials specified above are entered into the Enter your credentials dialog.](media/rdp-credentials-labvm.png "Enter your credentials")
 
-6. Select **Yes** to connect if prompted that the remote computer's identity cannot be verified.
+6. Select **Yes**, if you are challenged regarding the remote computer's identity verification.
 
     ![In the Remote Desktop Connection dialog box, a warning states that the remote computer's identity cannot be verified and asks if you want to continue anyway. At the bottom, the Yes button is circled.](media/remote-desktop-connection-identity-verification-labvm.png "Remote Desktop Connection dialog")
 
@@ -387,7 +387,7 @@ Now that all implementations are completed, we can upload a new document to the 
 
     ![Cosmos DB Overview page is open. Data explorer button is highlighted.](media/cosmosdb-data-explorer.png "Cosmos DB Data Explorer")
 
-13. Select the **Items (1)** list under the **Contoso** database's **Claims** collection. Select the first document **(2)** to see its content. Take a look at the values extracted by Forms Recognizer, such as **PatientName** and **Diagnosis (3)**.
+13. Select the **Items (1)** list under the **Contoso** database's **Claims** collection. Select the first document **(2)** to see its content. Review the values extracted by Forms Recognizer, such as **PatientName** and **Diagnosis (3)**.
 
     ![Cosmos DB Data Explorer is open. Claims Document values are shown as a document in Claims collection in the Contoso database.](media/cosmosdb-data-explorer-claims-document.png "Claims Document in Cosmos DB")
 
@@ -794,7 +794,7 @@ In this task, we will connect our Azure Cognitive Search indexes with the hospit
 
     ![Hospital Portal is shown. The search box is filled with COVID. Claims document and transcription results are highlighted. Filtering options based on medical information are highlighted.](media/hospital-portal.png "Hospital Portal")
 
-    In the screenshot above, on the left **(4)**, you can find a list of categories of medical information extracted by Cognitive Services Text Analytics for Healthcare. Currently, the category list is filtered based on your search. It shows you the number of documents per category where medical information is found in the matching categories in the entire search result set.
+    In the screenshot above, on the left **(4)**, you can find a list of categories of medical information extracted by Cognitive Services Text Analytics for Healthcare. Currently, the category list is filtered based on your search. It shows you the number of documents per category where there is a medical information search match.
 
     On the top of the search result, the first record is a claims form **(2)**. In this case, thanks to Forms Recognizer, the data in the actual form is digitized and used to present a unified search experience across both claims forms and audio transcriptions. If you select the PDF link in the search result, you can see the original file and notice the diagnosis field extracted as COVID.
 
