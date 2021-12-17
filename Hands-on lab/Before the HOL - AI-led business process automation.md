@@ -158,3 +158,6 @@ When executing the script below, it is crucial to let the scripts run to complet
     | Enter the name of your resource group. |
 
 3. At the end of the script, you should see a message indicating **Environment setup complete**.
+
+You should follow all steps provided *before* performing the Hands-on lab.
+
