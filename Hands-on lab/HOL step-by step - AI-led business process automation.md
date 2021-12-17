@@ -193,10 +193,12 @@ As part of its automation process, Contoso will upload claims documents in the f
 5. Set the values listed below:
 
     - **Name (1):** **DocumentEvents**
-    - **Topic Type (2):** Storage account.
+    - **Topic Type (2):** Storage account (Blob & GPv2).
     - **Source Resource (3):** Contoso storage account.
     - **System Topic Name (4):** **DocumentEvent**
     - **Filter to Event Types (5):** Blob Created
+
+    Note: If you have multiple subscriptions, you may have to choose your subscription and resource group before you choose your System Resource (3).
 
    ![Create event subscription page is presented. The event name is set to DocumentEvents. Topic Type is set to Storage account. Source Resource is set to contosoSUFFIX storage account. System Topic Name is set to DocumentEvent. Blob Created and Blob Deleted events are selected. Create button is highlighted.](media/event-grid-create-subscription.png "Event Grid Subscription Settings")
 
@@ -285,7 +287,7 @@ For the document processing automation, our Azure Function must read the documen
 
    ![Lab resource group is open. The storage account is highlighted.](media/select-storage-account.png "Storage Account Selection")
 
-2. From the left menu, select **Access keys (1)**. Select **Show keys (2)** to reveal the keys. Select the copy button **(3)** next to the **key1** connection string and paste it to a text editor of your choice. This value will be used later in the lab.
+2. From the left menu, select **Access keys (1)**. Select **Show keys (2)** to reveal the keys. Select the copy button **(3)** next to the **key1** connection string and paste it to a text editor of your choice. This value will be used later in the lab.  The copy button may not show up until you select Show Keys.  
 
    ![Storage Account Access keys page is shown. The show Keys button is selected. The copy button for the first connection string is highlighted.](media/get-storage-connection-string.png "Copy Storage Connection String")
 
@@ -322,7 +324,7 @@ For the document processing automation, our Azure Function must read the documen
 
    ![New application settings are highlighted. Save button is pointed.](media/function-app-settings-save.png "Save new application settings")
 
-10. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.
+10. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.  Select **Yes** to confirm.
 
    ![Restarting the Function App after configuring service integrations.](media/function-app-restart.png "Restarting Function App")
 
@@ -424,8 +426,8 @@ As part of its automation process, Contoso will upload audio recordings of patie
 5. Set the values listed below.
 
     - **Name (1):** **AudioEvents**
-    - **Topic Type (2):** Storage account.
-    - **Source Resource (3):** Contoso storage account.
+    - **Topic Type (2):** Storage account (Blob & GPv2).
+    - **Source Resource (3):** Contoso storage account.  You may have to select your subscription and resource group first.
     - **System Topic Name (4):** **DocumentEvent**
     - **Filter to Event Types (5):** Blob Created
 
@@ -484,11 +486,11 @@ For audio recording processing, the AudioProcessing function will use multiple C
     | TextAnalyticsKey      | Previously copied **Key 1** for Cognitive Services Text Analytics resource                       |
     | TextAnalyticsEndpoint | Previously copied **Endpoint** for Cognitive Services Text Analytics resource                    |
 
-11. Once all settings **(1)** are set, select **Save (2)**.
+11. Once all settings **(1)** are set, select **Save (2)**.  Select **Continue**.
 
     ![New application settings are highlighted. Save button is pointed.](media/function-app-settings-save-step2.png "Save new application settings")
 
-12. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.
+12. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.  Select **Yes** to confirm.
 
    ![Restarting the Function App after configuring service integrations.](media/function-app-restart.png "Restarting Function App")
 
