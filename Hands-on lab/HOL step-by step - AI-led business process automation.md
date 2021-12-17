@@ -786,7 +786,7 @@ In this task, we will connect our Azure Cognitive Search indexes with the hospit
 
     ![New application settings are highlighted. Save button is pointed.](media/app-service-settings-save-step.png "Save new application settings")
 
-9. Go back to the **Overview (1)** page. Restart the web app **(2)** and select the **URL (3)** to navigate to the hospital portal. 
+9. Go back to the **Overview (1)** page. Restart the web app **(2)**.  Select **Yes**. Then select the **URL (3)** to navigate to the hospital portal. 
 
     ![Overview page for the App Service is shown. URL for the App Service is highlighted.](media/app-service-navigate-to-portal.png "Hospital Portal URL")
 
