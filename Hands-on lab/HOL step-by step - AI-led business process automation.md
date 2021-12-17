@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-July 2021
+December 2021
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -198,7 +198,7 @@ As part of its automation process, Contoso will upload claims documents in the f
     - **System Topic Name (4):** **DocumentEvent**
     - **Filter to Event Types (5):** Blob Created
 
-    Note: If you have multiple subscriptions, you may have to choose your subscription and resource group before you choose your System Resource (3).
+    >**Note:** If you have multiple subscriptions, you may have to choose your subscription and resource group before you choose your System Resource (3).
 
    ![Create event subscription page is presented. The event name is set to DocumentEvents. Topic Type is set to Storage account. Source Resource is set to contosoSUFFIX storage account. System Topic Name is set to DocumentEvent. Blob Created and Blob Deleted events are selected. Create button is highlighted.](media/event-grid-create-subscription.png "Event Grid Subscription Settings")
 
@@ -309,7 +309,7 @@ For the document processing automation, our Azure Function must read the documen
 
 7. Set **Name (1)** to **ContosoStorageConnectionString** and **Value (2)** to the previously copied storage account connection string. Select **OK (3)** to save.
 
-   ![Add Edit Application setting panel is open. Name is set to ContosoStorageConnectionString. Value is set to the previously copied Contoso storage account connection string. OK button is highlighted.](media/function-app-setting-contoso-storage.png)
+   ![Add Edit Application setting panel is open. Name is set to ContosoStorageConnectionString. Value is set to the previously copied Contoso storage account connection string. OK button is highlighted.](media/function-app-setting-contoso-storage.png "Add Edit Application Setting")
 
 8. Repeat the same steps to add the **Application Settings** listed below.
 
@@ -473,7 +473,7 @@ For audio recording processing, the AudioProcessing function will use multiple C
 
 9. Set **Name (1)** to **SpeechRegion** and **Value (2)** to the previously copied Speech service's **Location**. Select **OK (3)** to save.
 
-   ![Add Edit Application setting panel is open. Name is set to SpeechRegion. Value is set to the previously copied speech service region. The OK button is highlighted.](media/function-app-setting-speech-region.png)
+   ![Add Edit Application setting panel is open. Name is set to SpeechRegion. Value is set to the previously copied speech service region. The OK button is highlighted.](media/function-app-setting-speech-region.png "Add Edit Application Setting")
 
 10. Repeat the same steps to add the **Application Settings** listed below.
 
@@ -794,13 +794,13 @@ In this task, we will connect our Azure Cognitive Search indexes with the hospit
 
     ![Hospital Portal is shown. The search box is filled with COVID. Claims document and transcription results are highlighted. Filtering options based on medical information are highlighted.](media/hospital-portal.png "Hospital Portal")
 
-    In the screenshot above, on the left **(4)**, you can find a list of categories of medical information extracted by Cognitive Services Text Analytics for Healthcare. Currently, the category list is filtered based on your search. It shows you the number of documents per category where medical information is found in the matching categories in the entire search result set. 
+    In the screenshot above, on the left **(4)**, you can find a list of categories of medical information extracted by Cognitive Services Text Analytics for Healthcare. Currently, the category list is filtered based on your search. It shows you the number of documents per category where medical information is found in the matching categories in the entire search result set.
 
-    On the top of the search result, the first record is a claims form **(2)**. In this case, thanks to Forms Recognizer, the data in the actual form is digitized and used to present a unified search experience across both claims forms and audio transcriptions. If you select the PDF link in the search result, you can see the original file and notice the diagnosis field extracted as COVID. 
+    On the top of the search result, the first record is a claims form **(2)**. In this case, thanks to Forms Recognizer, the data in the actual form is digitized and used to present a unified search experience across both claims forms and audio transcriptions. If you select the PDF link in the search result, you can see the original file and notice the diagnosis field extracted as COVID.
 
-    The second item in the search result **(3)** is an audio transcription. All the green highlighted sections are medical information that Text Analytics for Health identified. These keywords and their primary categories are used for further investigation either by keyword search **(1)** or faceted filtering **(4)**. You can always click the play button in the result view to listen to the actual patient-doctor dialog. 
+    The second item in the search result **(3)** is an audio transcription. All the green highlighted sections are medical information that Text Analytics for Health identified. These keywords and their primary categories are used for further investigation either by keyword search **(1)** or faceted filtering **(4)**. You can always click the play button in the result view to listen to the actual patient-doctor dialog.
 
-    In the case of Contoso, the hospital wanted to prioritize claims forms in the search result. Therefore, the implementation includes two search queries to the claims index and audio index and combines the top-scoring items based on the business rule within the portal. 
+    In the case of Contoso, the hospital wanted to prioritize claims forms in the search result. Therefore, the implementation includes two search queries to the claims index and audio index and combines the top-scoring items based on the business rule within the portal.
 
 ## Exercise 4: Building custom PowerBI reports on healthcare data
 

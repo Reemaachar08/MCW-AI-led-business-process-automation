@@ -4,7 +4,7 @@ Contoso Healthcare is a major hospital network consisting of multiple locations 
 
 In addition to claims processing, Contoso Healthcare needs to transcribe, translate, and store patient/doctor visit audio recordings. A key benefit to obtaining audio transcripts is the ability to surface valuable medical terms, dosage instructions, and diagnoses discussed. Therefore, the information transcribed needs to be analyzed and enhanced with medical labeling and provided as a source for search functionality in their web portal.
 
-July 2021
+December 2021
 
 ## Target audience
 
