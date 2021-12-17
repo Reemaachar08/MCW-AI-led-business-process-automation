@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-July 2021
+December 2021
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -193,10 +193,12 @@ As part of its automation process, Contoso will upload claims documents in the f
 5. Set the values listed below:
 
     - **Name (1):** **DocumentEvents**
-    - **Topic Type (2):** Storage account.
+    - **Topic Type (2):** Storage account (Blob & GPv2).
     - **Source Resource (3):** Contoso storage account.
     - **System Topic Name (4):** **DocumentEvent**
     - **Filter to Event Types (5):** Blob Created
+
+    >**Note:** If you have multiple subscriptions, you may have to choose your subscription and resource group before you choose your System Resource (3).
 
    ![Create event subscription page is presented. The event name is set to DocumentEvents. Topic Type is set to Storage account. Source Resource is set to contosoSUFFIX storage account. System Topic Name is set to DocumentEvent. Blob Created and Blob Deleted events are selected. Create button is highlighted.](media/event-grid-create-subscription.png "Event Grid Subscription Settings")
 
@@ -243,11 +245,11 @@ To process documents, the Azure Function code has to find the latest model train
 
     ![File Explorer shows the DocumentProcessing folder in C:\MCW\MCW-main\Hands-on lab\lab-files\source-azure-functions\Lab-DocumentProcessing. DocumentProcessing solution file is highlighted.](media/visualstudio-open-documentprocessing.png "DocumentProcessing Solution")
 
-9. In the Visual Studio sign in page select **Not now, maybe later.** to continue.
+9. In the Visual Studio sign-in page, select **Not now, maybe later.** to continue.
 
    ![Visual Studio Sign In dialog is presented. "Not now, maybe later" link is highlighted.](media/visualstudio-sign-in.png "Visual Studio Sign In")
 
-10. On the Visual Studio Licensing page select **Sign-In** and use Microsoft Account credentials. This will register a Visual Studio 2019 Community Edition license for your account for free.
+10. On the Visual Studio Licensing page select **Sign-In** and use Microsoft Account credentials. This step will register a Visual Studio 2019 Community Edition license for your account for free.
 
     ![Visual Studio License page is open. Sign-In button is highlighted.](media/visual-studio-license.png "Visual Studio License")
 
@@ -275,7 +277,7 @@ To process documents, the Azure Function code has to find the latest model train
     RecognizedFormCollection forms = operationResponse.Value;
     ```
 
-15. Close Visual Studio. You don't have to worry about the changes you have implemented. A fully functional version of the Function App is already deployed to your Lab environment and will be soon ready to be tested.
+15. Close Visual Studio. The recent changes are not required. A fully functional version of the Function App is already deployed to your Lab environment and will be soon ready to be tested.
 
 ### Task 4: Connecting CosmosDB and Forms Recognizer to Azure Functions
 
@@ -285,7 +287,7 @@ For the document processing automation, our Azure Function must read the documen
 
    ![Lab resource group is open. The storage account is highlighted.](media/select-storage-account.png "Storage Account Selection")
 
-2. From the left menu, select **Access keys (1)**. Select **Show keys (2)** to reveal the keys. Select the copy button **(3)** next to the **key1** connection string and paste it to a text editor of your choice. This value will be used later in the lab.
+2. From the left menu, select **Access keys (1)**. Select **Show keys (2)** to reveal the keys. Select the copy button **(3)** next to the **key1** connection string and paste it to a text editor of your choice. This value will be used later in the lab.  The copy button may not show up until you select Show Keys.  
 
    ![Storage Account Access keys page is shown. The show Keys button is selected. The copy button for the first connection string is highlighted.](media/get-storage-connection-string.png "Copy Storage Connection String")
 
@@ -307,7 +309,7 @@ For the document processing automation, our Azure Function must read the documen
 
 7. Set **Name (1)** to **ContosoStorageConnectionString** and **Value (2)** to the previously copied storage account connection string. Select **OK (3)** to save.
 
-   ![Add Edit Application setting panel is open. Name is set to ContosoStorageConnectionString. Value is set to the previously copied Contoso storage account connection string. OK button is highlighted.](media/function-app-setting-contoso-storage.png)
+   ![Add Edit Application setting panel is open. Name is set to ContosoStorageConnectionString. Value is set to the previously copied Contoso storage account connection string. OK button is highlighted.](media/function-app-setting-contoso-storage.png "Add Edit Application Setting")
 
 8. Repeat the same steps to add the **Application Settings** listed below.
 
@@ -322,7 +324,7 @@ For the document processing automation, our Azure Function must read the documen
 
    ![New application settings are highlighted. Save button is pointed.](media/function-app-settings-save.png "Save new application settings")
 
-10. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.
+10. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.  Select **Yes** to confirm.
 
    ![Restarting the Function App after configuring service integrations.](media/function-app-restart.png "Restarting Function App")
 
@@ -357,7 +359,7 @@ Now that all implementations are completed, we can upload a new document to the 
 
     ![The credentials specified above are entered into the Enter your credentials dialog.](media/rdp-credentials-labvm.png "Enter your credentials")
 
-6. Select **Yes** to connect if prompted that the remote computer's identity cannot be verified.
+6. Select **Yes**, if you are challenged regarding the remote computer's identity verification.
 
     ![In the Remote Desktop Connection dialog box, a warning states that the remote computer's identity cannot be verified and asks if you want to continue anyway. At the bottom, the Yes button is circled.](media/remote-desktop-connection-identity-verification-labvm.png "Remote Desktop Connection dialog")
 
@@ -385,7 +387,7 @@ Now that all implementations are completed, we can upload a new document to the 
 
     ![Cosmos DB Overview page is open. Data explorer button is highlighted.](media/cosmosdb-data-explorer.png "Cosmos DB Data Explorer")
 
-13. Select the **Items (1)** list under the **Contoso** database's **Claims** collection. Select the first document **(2)** to see its content. Take a look at the values extracted by Forms Recognizer, such as **PatientName** and **Diagnosis (3)**.
+13. Select the **Items (1)** list under the **Contoso** database's **Claims** collection. Select the first document **(2)** to see its content. Review the values extracted by Forms Recognizer, such as **PatientName** and **Diagnosis (3)**.
 
     ![Cosmos DB Data Explorer is open. Claims Document values are shown as a document in Claims collection in the Contoso database.](media/cosmosdb-data-explorer-claims-document.png "Claims Document in Cosmos DB")
 
@@ -424,8 +426,8 @@ As part of its automation process, Contoso will upload audio recordings of patie
 5. Set the values listed below.
 
     - **Name (1):** **AudioEvents**
-    - **Topic Type (2):** Storage account.
-    - **Source Resource (3):** Contoso storage account.
+    - **Topic Type (2):** Storage account (Blob & GPv2).
+    - **Source Resource (3):** Contoso storage account.  You may have to select your subscription and resource group first.
     - **System Topic Name (4):** **DocumentEvent**
     - **Filter to Event Types (5):** Blob Created
 
@@ -471,7 +473,7 @@ For audio recording processing, the AudioProcessing function will use multiple C
 
 9. Set **Name (1)** to **SpeechRegion** and **Value (2)** to the previously copied Speech service's **Location**. Select **OK (3)** to save.
 
-   ![Add Edit Application setting panel is open. Name is set to SpeechRegion. Value is set to the previously copied speech service region. The OK button is highlighted.](media/function-app-setting-speech-region.png)
+   ![Add Edit Application setting panel is open. Name is set to SpeechRegion. Value is set to the previously copied speech service region. The OK button is highlighted.](media/function-app-setting-speech-region.png "Add Edit Application Setting")
 
 10. Repeat the same steps to add the **Application Settings** listed below.
 
@@ -484,11 +486,11 @@ For audio recording processing, the AudioProcessing function will use multiple C
     | TextAnalyticsKey      | Previously copied **Key 1** for Cognitive Services Text Analytics resource                       |
     | TextAnalyticsEndpoint | Previously copied **Endpoint** for Cognitive Services Text Analytics resource                    |
 
-11. Once all settings **(1)** are set, select **Save (2)**.
+11. Once all settings **(1)** are set, select **Save (2)**.  Select **Continue**.
 
     ![New application settings are highlighted. Save button is pointed.](media/function-app-settings-save-step2.png "Save new application settings")
 
-12. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.
+12. Restart your Function App by selecting **Overview (1)** and **Restart (2)**.  Select **Yes** to confirm.
 
    ![Restarting the Function App after configuring service integrations.](media/function-app-restart.png "Restarting Function App")
 
@@ -784,7 +786,7 @@ In this task, we will connect our Azure Cognitive Search indexes with the hospit
 
     ![New application settings are highlighted. Save button is pointed.](media/app-service-settings-save-step.png "Save new application settings")
 
-9. Go back to the **Overview (1)** page. Restart the web app **(2)** and select the **URL (3)** to navigate to the hospital portal. 
+9. Go back to the **Overview (1)** page. Restart the web app **(2)**.  Select **Yes**. Then select the **URL (3)** to navigate to the hospital portal. 
 
     ![Overview page for the App Service is shown. URL for the App Service is highlighted.](media/app-service-navigate-to-portal.png "Hospital Portal URL")
 
@@ -792,13 +794,13 @@ In this task, we will connect our Azure Cognitive Search indexes with the hospit
 
     ![Hospital Portal is shown. The search box is filled with COVID. Claims document and transcription results are highlighted. Filtering options based on medical information are highlighted.](media/hospital-portal.png "Hospital Portal")
 
-    In the screenshot above, on the left **(4)**, you can find a list of categories of medical information extracted by Cognitive Services Text Analytics for Healthcare. Currently, the category list is filtered based on your search. It shows you the number of documents per category where medical information is found in the matching categories in the entire search result set. 
+    In the screenshot above, on the left **(4)**, you can find a list of categories of medical information extracted by Cognitive Services Text Analytics for Healthcare. Currently, the category list is filtered based on your search. It shows you the number of documents per category where there is a medical information search match.
 
-    On the top of the search result, the first record is a claims form **(2)**. In this case, thanks to Forms Recognizer, the data in the actual form is digitized and used to present a unified search experience across both claims forms and audio transcriptions. If you select the PDF link in the search result, you can see the original file and notice the diagnosis field extracted as COVID. 
+    On the top of the search result, the first record is a claims form **(2)**. In this case, thanks to Forms Recognizer, the data in the actual form is digitized and used to present a unified search experience across both claims forms and audio transcriptions. If you select the PDF link in the search result, you can see the original file and notice the diagnosis field extracted as COVID.
 
-    The second item in the search result **(3)** is an audio transcription. All the green highlighted sections are medical information that Text Analytics for Health identified. These keywords and their primary categories are used for further investigation either by keyword search **(1)** or faceted filtering **(4)**. You can always click the play button in the result view to listen to the actual patient-doctor dialog. 
+    The second item in the search result **(3)** is an audio transcription. All the green highlighted sections are medical information that Text Analytics for Health identified. These keywords and their primary categories are used for further investigation either by keyword search **(1)** or faceted filtering **(4)**. You can always click the play button in the result view to listen to the actual patient-doctor dialog.
 
-    In the case of Contoso, the hospital wanted to prioritize claims forms in the search result. Therefore, the implementation includes two search queries to the claims index and audio index and combines the top-scoring items based on the business rule within the portal. 
+    In the case of Contoso, the hospital wanted to prioritize claims forms in the search result. Therefore, the implementation includes two search queries to the claims index and audio index and combines the top-scoring items based on the business rule within the portal.
 
 ## Exercise 4: Building custom PowerBI reports on healthcare data
 
