@@ -174,35 +174,31 @@ Contoso has its own document template for claims processing. In this exercise, y
 
 As part of its automation process, Contoso will upload claims documents in the form of PDF files to an Azure Storage account as blobs. An Azure Function App has to detect new files and process them with the trained Forms Recognizer Model. [Event Grid](https://docs.microsoft.com/azure/event-grid/overview) is the perfect candidate to build applications with event-based architectures thanks to its built-in support for events coming from Azure services, like storage blobs and resource groups. For the Functions App to detect new blobs, you will be using an Azure Event Grid subscription and defining an event handler for the matching Azure Function.
 
-1. In the [Azure portal](https://portal.azure.com), navigate to your **contosoSUFFIX** Storage Account located in the **hands-on-lab-SUFFIX** resource group.
+1. In the [Azure portal](https://portal.azure.com), navigate to your Azure subscription (1). Choose **Resource providers (2)** option in the **Settings** menu. Then, search for "eventgrid" (3) and select the **Microsoft.EventGrid (4)** option. Finally, select **Register (5)** to enable Event Grids in your subscription. This registration may take several minutes to complete.
 
-   ![Lab resource group is open. The storage account is highlighted.](media/select-storage-account.png "Storage Account Selection")
+   ![The Resource providers menu is open and Microsoft.EventGrid has been registered.](media/register-event-grid-provider.png "Register Event Grid resource provider")
 
-2. From the left menu, select **Events (1)**. Make sure you are on the **Get Started (2)** page. Select **Azure Function (3)** as the event destination type. Select **Create (4)** to continue.
+2. In the Azure portal, search for "event" (1) and choose the **Event Grid Subscriptions (2)** option from the menu.
 
-   ![Storage account page is open. The events panel is shown. Azure Functions is selected. Create button is highlighted.](media/storage-event-function.png "Create Storage Event Subscription")
+   ![In the Azure portal, the Event Grid Subscriptions service is highlighted.](media/event-grid-subscriptions.png "Event Grid Subscriptions")
 
-3. From the list of function apps, expand the function app named **contoso-func-SUFFIX** **(1)** to get a list of functions available. From the list, select the **ClaimsProcessing** **(2)** function.
+3. On the Event Subscriptions page, choose **+ Event Subscription**.
 
-   ![Function Apps are listed. Contoso function app functions are shown. ClaimsProcessing function is highlighted.](media/event-grid-select-claimsprocessing.png "Function Selection for Event Grid")
+   ![On the Event Subscriptions page, the Add Event Subscription option is highlighted.](media/event-subscription.png "Add Event Subscription")
 
-4. Select **Add Event Grid Subscription (1)**.
-
-   ![ClaimsProcessing function is selected. Add Event Grid Subscription link is highlighted.](media/event-grid-add-subscription.png "Add Event Grid Subscription")
-
-5. Set the values listed below:
+4. Set the values listed below:
 
     - **Name (1):** **DocumentEvents**
-    - **Topic Type (2):** Storage account (Blob & GPv2).
-    - **Source Resource (3):** Contoso storage account.
-    - **System Topic Name (4):** **DocumentEvent**
-    - **Filter to Event Types (5):** Blob Created
+    - **Topic Type (2):** Storage account (Blob & GPv2). Choose your **contosoSUFFIX** storage account and use **DocumentEvent** as the System Topic Name.
+    - **Filter to Event Types (3):** Blob Created
+    - **Endpoint Details (4):** Choose **Azure Function** and then **Select an endpoint**.
+    - **Select Azure Function (5):** Choose the appropriate subscription, resource group, and **contoso-func-SUFFIX** function app. From the **Production** slot, select the **ClaimsProcessing** function.
+
+   Choose **Confirm Selection (6)** to create the Azure Function and then **Create (7)** to create the Event Grid Subscription.
 
     >**Note:** If you have multiple subscriptions, you may have to choose your subscription and resource group before you choose your System Resource (3).
 
-   ![Create event subscription page is presented. The event name is set to DocumentEvents. Topic Type is set to Storage account. Source Resource is set to contosoSUFFIX storage account. System Topic Name is set to DocumentEvent. Blob Created and Blob Deleted events are selected. Create button is highlighted.](media/event-grid-create-subscription.png "Event Grid Subscription Settings")
-
-    Select **Create (6)** to continue.
+   ![Create event subscription page is presented. The event name is set to DocumentEvents. Topic Type is set to Storage account. Source Resource is set to contosoSUFFIX storage account. System Topic Name is set to DocumentEvent. The Blob Created event is selected. Create button is highlighted.](media/create-event-subscription.png "Event Grid Subscription Settings")
 
 ### Task 3: Implementing Forms Recognizer for document processing
 
@@ -407,33 +403,27 @@ Contoso Healthcare hospitals upload audio recordings of patient visits to an Azu
 
 As part of its automation process, Contoso will upload audio recordings of patient visits as WAV files to an Azure Storage account as blobs. An Azure Function App will detect new files and process them with multiple Cognitive Services. For the Functions App to detect new blobs, you will be using a new Azure Event Grid subscription and defining an event handler for the matching Azure Function.
 
-1. In the [Azure portal](https://portal.azure.com), select your **contosoSUFFIX** Storage Account in the lab resource group.
+1. In the [Azure portal](https://portal.azure.com), search for "event" (1) and choose the **Event Grid Subscriptions (2)** option from the menu.
 
-   ![Lab resource group is open. The storage account is highlighted.](media/select-storage-account.png "Storage Account Selection")
+   ![In the Azure portal, the Event Grid Subscriptions service is highlighted.](media/event-grid-subscriptions.png "Event Grid Subscriptions")
 
-2. From the left menu, select **Events (1)**. Make sure you are on the **Get Started (2)** page. Select **Azure Function (3)** as the event destination type. Select **Create (4)** to continue.
+2. On the Event Subscriptions page, choose **+ Event Subscription**.
 
-   ![Storage account page is open. The events panel is shown. Azure Functions is selected. Create button is highlighted.](media/storage-event-function.png "Create Storage Event Subscription")
+   ![On the Event Subscriptions page, the Add Event Subscription option is highlighted.](media/event-subscription.png "Add Event Subscription")
 
-3. Beneath the **Function Apps** header, expand the function app named **contoso-func-SUFFIX**. Expand the **Functions (Read Only)** item to get a list of functions available. From the functions list, select the **AudioProcessing** function.
-
-   ![Function Apps are listed. Contoso function app functions are shown. ClaimsProcessing function is highlighted.](media/event-grid-select-audioprocessing.png "Function Selection for Event Grid")
-
-4. Select **Add Event Grid Subscription (1)**.
-
-   ![ClaimsProcessing function is selected. Add Event Grid Subscription link is highlighted.](media/event-grid-add-subscription-for-audioprocessing.png "Add Event Grid Subscription")
-
-5. Set the values listed below.
+3. Set the values listed below:
 
     - **Name (1):** **AudioEvents**
-    - **Topic Type (2):** Storage account (Blob & GPv2).
-    - **Source Resource (3):** Contoso storage account.  You may have to select your subscription and resource group first.
-    - **System Topic Name (4):** **DocumentEvent**
-    - **Filter to Event Types (5):** Blob Created
+    - **Topic Type (2):** Storage account (Blob & GPv2). Choose your **contosoSUFFIX** storage account and use **DocumentEvent** as the System Topic Name.
+    - **Filter to Event Types (3):** Blob Created
+    - **Endpoint Details (4):** Choose **Azure Function** and then **Select an endpoint**.
+    - **Select Azure Function (5):** Choose the appropriate subscription, resource group, and **contoso-func-SUFFIX** function app. From the **Production** slot, select the **AudioProcessing** function.
 
-   ![Create event subscription page is presented. The event name is set to DocumentEvents. Topic Type is set to Storage account. Source Resource is set to contosoSUFFIX storage account. System Topic Name is set to DocumentEvent. Blob Created and Blob Deleted events are selected. Create button is highlighted.](media/event-grid-create-subscription-for-audio.png "Event Grid Subscription Settings")
+   Choose **Confirm Selection (6)** to create the Azure Function and then **Create (7)** to create the Event Grid Subscription.
 
-    Select **Create (6)** to continue.
+    >**Note:** If you have multiple subscriptions, you may have to choose your subscription and resource group before you choose your System Resource (3).
+
+   ![Create event subscription page is presented. The event name is set to AudioEvents. Topic Type is set to Storage account. Source Resource is set to contosoSUFFIX storage account. System Topic Name is set to DocumentEvent. The Blob Created event is selected. Create button is highlighted.](media/create-event-subscription-audio.png "Event Grid Subscription Settings")
 
 ### Task 2: Connecting Cognitive Services to Azure Functions
 
