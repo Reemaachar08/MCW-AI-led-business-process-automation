@@ -1,9 +1,6 @@
-# Retirement notice
-This workshop will be retired effective June 30, 2022. At that time the repository will be archived, and the materials will not be maintained.
-
-For questions or concerns regarding the MCW library, email [AskMCW](mailto:AskMCW@microsoft.com). Please remember to include the title of the workshop in your email.
-
 # AI-led business process automation
+
+## This workshop is archived and no longer being maintained.  Content is read-only.
 
 Contoso Healthcare is a major hospital network consisting of multiple locations across the United States. One of Contoso Healthcare's most significant needs is to have the ability to process handwritten and electronically filled medical claims forms. Currently, each hospital uploads image representations of completed forms via an Azure File Share. Employees then review each document and enter data manually into the claims system. Contoso Healthcare is looking to automate the business process of extracting claims form data and provide valuable reporting visualizations from the claims data ingested.
 
